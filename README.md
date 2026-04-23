@@ -1,6 +1,6 @@
-# 🍔 Foodzy — Online Food Ordering Platform
+# 🍔 BhaiTuKha — Online Food Ordering Platform
 
-Foodzy is a full-stack React + Firebase food delivery web app that lets users browse restaurants, order dishes, track deliveries, and chat with an AI-powered food assistant. It is designed for speed, scalability, and modern UI.
+BhaiTuKha is a full-stack React + Firebase food delivery web app that lets users browse restaurants, order dishes, track deliveries, and chat with an AI-powered food assistant. It is designed for speed, scalability, and modern UI.
 
 ---
 
@@ -25,7 +25,7 @@ Foodzy is a full-stack React + Firebase food delivery web app that lets users br
 
 ### 🤖 Chatbot (Gemini API)
 - Built-in Gemini 2.5 Flash Preview API for AI food recommendations
-- Smart conversational interface themed to match Foodzy
+- Smart conversational interface themed to match BhaiTuKha
 - Typing animation, message history, and error handling
 
 ### 📊 Analytics
@@ -54,7 +54,7 @@ Foodzy is a full-stack React + Firebase food delivery web app that lets users br
 ## 🧩 Folder Structure (Simplified)
 
 ```text
-Foodzy/
+BhaiTuKha/
 ├── src/
 │   ├── App.jsx
 │   ├── firebase.js
@@ -71,8 +71,8 @@ Foodzy/
 
 ### 1️⃣ Clone the repository
 ```text
-git clone https://github.com/Yatishydv/Foodzy.git
-cd Foodzy
+git clone https://github.com/Yatishydv/BhaiTuKha.git
+cd BhaiTuKha
 ```
 ### 2️⃣ Install dependencies
 ```text

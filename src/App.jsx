@@ -75,7 +75,7 @@ const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial
 const apiKey = "AIzaSyCqJmtwytjxw8tkCBdgChzfMy29CmukH74"; 
 
 // --- MOCK DISH DATA (OVER 70 ITEMS) WITH FULL GITHUB URLS ---
-const BASE_URL = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/';
+const BASE_URL = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/';
 
 const MOCK_DISHES = [
   // The Curry House (Indian) - 10 dishes (r101)
@@ -199,18 +199,18 @@ const MOCK_DISHES = [
 
 // --- MOCK RESTAURANT DATA (EXPANDED TO 12 RESTAURANTS) ---
 // FIX APPLIED: Using the direct raw content URL from GitHub for ALL restaurants.
-const UNIVERSAL_IMAGE_URL1 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/The%20Curry%20House.png';
-const UNIVERSAL_IMAGE_URL2 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/Pizza%20Planet.png';
-const UNIVERSAL_IMAGE_URL3 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/Veggie%20Delights.png';
-const UNIVERSAL_IMAGE_URL4 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/Wok%20Master.png';
-const UNIVERSAL_IMAGE_URL5 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/TheBurgerStop.png';
-const UNIVERSAL_IMAGE_URL6 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/Sushi%20Zen.png';
-const UNIVERSAL_IMAGE_URL7 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/Taco%20Fiesta.png';
-const UNIVERSAL_IMAGE_URL8 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/Mediterranean%20Grill.png';
-const UNIVERSAL_IMAGE_URL9 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/Cafe%20Latte.png';
-const UNIVERSAL_IMAGE_URL10 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/Asian%20Fusion%20Bowl.png';
-const UNIVERSAL_IMAGE_URL11 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/Donut%20Heaven.png';
-const UNIVERSAL_IMAGE_URL12 = 'https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/Healthy%20Hues.png';
+const UNIVERSAL_IMAGE_URL1 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/The%20Curry%20House.png';
+const UNIVERSAL_IMAGE_URL2 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/Pizza%20Planet.png';
+const UNIVERSAL_IMAGE_URL3 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/Veggie%20Delights.png';
+const UNIVERSAL_IMAGE_URL4 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/Wok%20Master.png';
+const UNIVERSAL_IMAGE_URL5 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/TheBurgerStop.png';
+const UNIVERSAL_IMAGE_URL6 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/Sushi%20Zen.png';
+const UNIVERSAL_IMAGE_URL7 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/Taco%20Fiesta.png';
+const UNIVERSAL_IMAGE_URL8 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/Mediterranean%20Grill.png';
+const UNIVERSAL_IMAGE_URL9 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/Cafe%20Latte.png';
+const UNIVERSAL_IMAGE_URL10 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/Asian%20Fusion%20Bowl.png';
+const UNIVERSAL_IMAGE_URL11 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/Donut%20Heaven.png';
+const UNIVERSAL_IMAGE_URL12 = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/Healthy%20Hues.png';
 
 
 
@@ -265,7 +265,7 @@ const geminiGenerateContent = async (userQuery, retries = 3) => {
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
     
     // System instruction for food-related conversation
-    const systemInstruction = "You are FoodzySwift AI, a helpful and friendly culinary chatbot. Provide recommendations, dietary information, and general food knowledge. Keep your answers concise and encouraging. Do not mention your model name or training status.";
+    const systemInstruction = "You are BhaiTuKha AI, a helpful and friendly culinary chatbot. Provide recommendations, dietary information, and general food knowledge. Keep your answers concise and encouraging. Do not mention your model name or training status.";
 
     const payload = {
         contents: [{ role: 'user', parts: [{ text: userQuery }] }],
@@ -357,7 +357,7 @@ const AnimatedFoodScene = () => {
 
         // 1. Torus (Central, Reddish - existing)
         const torusGeometry = new window.THREE.TorusGeometry(1, 0.4, 16, 100);
-        const torusMaterial = new window.THREE.MeshPhongMaterial({ color: 0xed6e7e, shininess: 150 }); // FoodzySwift Red/Pink color
+        const torusMaterial = new window.THREE.MeshPhongMaterial({ color: 0xed6e7e, shininess: 150 }); // BhaiTuKha Red/Pink color
         const torus = new window.THREE.Mesh(torusGeometry, torusMaterial);
         scene.add(torus);
         torus.position.set(0, 0, 0);
@@ -489,7 +489,7 @@ const NavigationBar = ({ setCurrentPage, cartItemCount, location, setLocation, s
     <div className="container mx-auto px-4 py-3 flex justify-between items-center max-w-7xl">
       <div className="flex items-center space-x-6">
         <span className="text-3xl font-extrabold text-[#E94458] cursor-pointer" onClick={() => setCurrentPage('home')}>
-          FoodzySwift
+          BhaiTuKha
         </span>
         <div className="hidden sm:flex items-center text-gray-600">
           <LocationSelector location={location} setLocation={setLocation} setModalMessage={setModalMessage} setCurrentDeliveryAddress={setCurrentDeliveryAddress} />
@@ -537,7 +537,7 @@ const Footer = ({ setCurrentPage }) => (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
-          <h4 className="text-lg font-bold mb-3 text-[#E94458]">FoodzySwift</h4>
+          <h4 className="text-lg font-bold mb-3 text-[#E94458]">BhaiTuKha</h4>
           {/* 1. New Tagline */}
           <p className="text-sm text-gray-400">Your next craving, delivered fast and fresh.</p>
         </div>
@@ -584,7 +584,7 @@ const Footer = ({ setCurrentPage }) => (
       </div>
       {/* 5. Copyright and Designer Info Change */}
       <div className="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
-        &copy; 2025 FoodzySwift. All rights reserved. | Designed & Developed by <a href="https://www.instagram.com/yatishydv/" target="_blank" rel="noopener noreferrer" className="text-[#E94458] hover:underline">Yatish 🌸</a>
+        &copy; 2025 BhaiTuKha. All rights reserved. | Designed & Developed by <a href="https://www.instagram.com/yatishydv/" target="_blank" rel="noopener noreferrer" className="text-[#E94458] hover:underline">Yatish 🌸</a>
       </div>
     </div>
   </footer>
@@ -613,10 +613,10 @@ const MessageModal = ({ message, onClose }) => (
 );
 
 /**
- * GEMINI-POWERED CHATBOT MODAL (UI/UX UPDATED to match FoodzySwift theme)
+ * GEMINI-POWERED CHATBOT MODAL (UI/UX UPDATED to match BhaiTuKha theme)
  */
 const ChatbotModal = ({ onClose, setModalMessage }) => {
-    const [messages, setMessages] = useState([{ role: 'model', text: 'Hi there! I\'m FoodzySwift AI. I can help you decide what to eat, check for ingredients, or give quick food facts. What are you craving today?' }]);
+    const [messages, setMessages] = useState([{ role: 'model', text: 'Hi there! I\'m BhaiTuKha AI. I can help you decide what to eat, check for ingredients, or give quick food facts. What are you craving today?' }]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef(null);
@@ -657,11 +657,11 @@ const ChatbotModal = ({ onClose, setModalMessage }) => {
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4" onClick={onClose}>
             <div className="bg-white rounded-xl shadow-2xl flex flex-col w-full h-full max-w-lg max-h-[700px] transform transition-all scale-100 opacity-100" onClick={e => e.stopPropagation()}>
                 
-                {/* Header: Updated title/icon color to FoodzySwift primary */}
+                {/* Header: Updated title/icon color to BhaiTuKha primary */}
                 <div className="p-4 bg-gray-50 border-b flex justify-between items-center rounded-t-xl">
                     <h3 className="text-xl font-bold text-[#E94458] flex items-center">
                         <MessageSquare className="w-5 h-5 mr-2 text-red-400"/>
-                        FoodzySwift Chatbot
+                        BhaiTuKha Chatbot
                     </h3>
                     <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-1">
                         <X size={24} />
@@ -687,7 +687,7 @@ const ChatbotModal = ({ onClose, setModalMessage }) => {
                             <div className="max-w-[80%] px-4 py-2 rounded-xl text-sm bg-gray-200 text-gray-800 rounded-tl-none flex items-center shadow-md">
                                 {/* Loading Spinner: Updated color to text-[#E94458] */}
                                 <Loader className="w-4 h-4 animate-spin mr-2 text-[#E94458]" />
-                                FoodzySwift AI is typing...
+                                BhaiTuKha AI is typing...
                             </div>
                         </div>
                     )}
@@ -759,7 +759,7 @@ const DishCard = ({ dish, cart, setCart }) => {
         >
             <img
                 src={dish.imgUrl.replace('100x100', '200x150')} 
-                alt={`${dish.name} - delicious dish available for online delivery from FoodzySwift`}
+                alt={`${dish.name} - delicious dish available for online delivery from BhaiTuKha`}
                 className="w-full h-36 object-cover"
                 loading="lazy"
                 onError={(e) => { e.target.onerror = null; e.target.src = `https://placehold.co/200x150/f0f9ff/3b82f6?text=${dish.name.split(' ')[0]}` }} 
@@ -806,8 +806,8 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
   useEffect(() => {
     trackAnalytics('page_view', { page: 'home', userId });
     updateMeta(
-        "FoodzySwift | Order Food Online in India | Fast Local Delivery",
-        "FoodzySwift is India's leading online food delivery platform. Order food online easily from the best restaurants in India. Fast food delivery near you for Pizza, Burgers, and more!"
+        "BhaiTuKha | Order Food Online in India | Fast Local Delivery",
+        "BhaiTuKha is India's leading online food delivery platform. Order food online easily from the best restaurants in India. Fast food delivery near you for Pizza, Burgers, and more!"
     );
   }, [userId]);
 
@@ -877,7 +877,7 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
                 alt={`${restaurant.name} - best restaurant in India for ${restaurant.cuisine} food delivery`}
                 className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x200/cccccc/333333?text=FoodzySwift" }} // Fallback
+                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x200/cccccc/333333?text=BhaiTuKha" }} // Fallback
             />
             {/* RESTORED: Content area back to white background */}
             <div className="p-4 flex-grow flex flex-col justify-between bg-white"> 
@@ -1060,21 +1060,21 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
         {/* SEO CONTENT SECTION */}
         <div className="px-4 py-16 mt-12 bg-white rounded-2xl shadow-sm border border-gray-100">
             <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-extrabold text-gray-900 mb-6">FoodzySwift: Your Trusted Online Food Delivery Website in India</h2>
+                <h2 className="text-3xl font-extrabold text-gray-900 mb-6">BhaiTuKha: Your Trusted Online Food Delivery Website in India</h2>
                 <div className="prose prose-red text-gray-600 leading-relaxed space-y-4">
                     <p>
-                        <strong>FoodzySwift</strong> is an online food delivery platform where users can <strong>order food online</strong> easily from the <strong>best restaurants in India</strong>. If you are looking for <strong>food delivery near me</strong>, <strong>fast food delivery</strong>, or <strong>affordable food delivery options</strong>, FoodzySwift provides a seamless experience with quick and reliable service.
+                        <strong>BhaiTuKha</strong> is an online food delivery platform where users can <strong>order food online</strong> easily from the <strong>best restaurants in India</strong>. If you are looking for <strong>food delivery near me</strong>, <strong>fast food delivery</strong>, or <strong>affordable food delivery options</strong>, BhaiTuKha provides a seamless experience with quick and reliable service.
                     </p>
                     <p>
-                        Discover <strong>top restaurants near you</strong> and enjoy delicious meals with <strong>home delivery</strong>, including <strong>pizza delivery</strong>, <strong>burger delivery</strong>, <strong>North Indian food delivery</strong>, <strong>Chinese food delivery</strong>, and <strong>veg food delivery</strong>. Whether you want <strong>late night food delivery</strong>, <strong>cheap food delivery</strong>, or <strong>quick food delivery under 30 minutes</strong>, FoodzySwift makes it simple to <strong>order food online in India</strong>.
+                        Discover <strong>top restaurants near you</strong> and enjoy delicious meals with <strong>home delivery</strong>, including <strong>pizza delivery</strong>, <strong>burger delivery</strong>, <strong>North Indian food delivery</strong>, <strong>Chinese food delivery</strong>, and <strong>veg food delivery</strong>. Whether you want <strong>late night food delivery</strong>, <strong>cheap food delivery</strong>, or <strong>quick food delivery under 30 minutes</strong>, BhaiTuKha makes it simple to <strong>order food online in India</strong>.
                     </p>
                     <p>
-                        Explore the <strong>best restaurants in Delhi, Noida</strong>, and other cities with <strong>online food delivery services</strong> designed for convenience, speed, and quality. Find <strong>budget-friendly meals</strong>, <strong>top-rated dishes</strong>, and <strong>fast delivery food services</strong> all in one place with FoodzySwift, your trusted <strong>online food delivery website in India</strong>.
+                        Explore the <strong>best restaurants in Delhi, Noida</strong>, and other cities with <strong>online food delivery services</strong> designed for convenience, speed, and quality. Find <strong>budget-friendly meals</strong>, <strong>top-rated dishes</strong>, and <strong>fast delivery food services</strong> all in one place with BhaiTuKha, your trusted <strong>online food delivery website in India</strong>.
                     </p>
                     
                     <h3 className="text-2xl font-bold text-gray-800 mt-8">Explore a World of Cuisines</h3>
                     <p>
-                        At FoodzySwift, we understand that food is more than just sustenance; it's an experience. That's why we offer a diverse range of cuisines to choose from. Craving something spicy? Explore our Indian section featuring Butter Chicken, Paneer Tikka, and Dal Makhani. Looking for a quick bite? Our Burger and Sandwich categories are packed with delicious options from the top fast-food joints.
+                        At BhaiTuKha, we understand that food is more than just sustenance; it's an experience. That's why we offer a diverse range of cuisines to choose from. Craving something spicy? Explore our Indian section featuring Butter Chicken, Paneer Tikka, and Dal Makhani. Looking for a quick bite? Our Burger and Sandwich categories are packed with delicious options from the top fast-food joints.
                     </p>
                     <p>
                         We also cater to specific dietary needs. Our <strong>Vegan and Healthy</strong> categories are curated for those who prioritize wellness without sacrificing taste. Enjoy fresh salads, protein-packed bowls, and plant-based wraps delivered fresh.
@@ -1086,7 +1086,7 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
         {/* Floating Chatbot Button */}
         <button
             onClick={openChatbot}
-            // Updated Chatbot button color from blue to FoodzySwift primary
+            // Updated Chatbot button color from blue to BhaiTuKha primary
             className="fixed bottom-12 right-12 z-40 p-4 bg-[#E94458] text-white rounded-full shadow-2xl hover:bg-red-700 transition transform hover:scale-110 active:scale-95"
             aria-label="Open AI Chatbot"
         >
@@ -1108,8 +1108,8 @@ const RestaurantMenuPage = ({ restaurant, setCurrentPage, cart, setCart, userId,
   useEffect(() => {
     trackAnalytics('page_view', { page: 'menu', restaurantId: restaurant.id, userId });
     updateMeta(
-        `${restaurant.name} Menu | Order ${restaurant.cuisine} Food Online | FoodzySwift`,
-        `View the full menu for ${restaurant.name} on FoodzySwift. Order the best ${restaurant.cuisine} food online now for fast local delivery. Check out our daily deals!`
+        `${restaurant.name} Menu | Order ${restaurant.cuisine} Food Online | BhaiTuKha`,
+        `View the full menu for ${restaurant.name} on BhaiTuKha. Order the best ${restaurant.cuisine} food online now for fast local delivery. Check out our daily deals!`
     );
   }, [restaurant, userId]);
 
@@ -1165,7 +1165,7 @@ const RestaurantMenuPage = ({ restaurant, setCurrentPage, cart, setCart, userId,
             <img
               // FIX APPLIED HERE: Using the direct, unmodified imageUrl from MOCK_RESTAURANTS
               src={restaurant.imageUrl} 
-              alt={`${restaurant.name} official logo - best ${restaurant.cuisine} restaurant on FoodzySwift`}
+              alt={`${restaurant.name} official logo - best ${restaurant.cuisine} restaurant on BhaiTuKha`}
               className="w-20 h-20 object-cover rounded-full border-4 border-gray-200"
               loading="lazy"
               onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/80x80/cccccc/333333?text=Logo" }} // Fallback
@@ -1241,7 +1241,7 @@ const RestaurantMenuPage = ({ restaurant, setCurrentPage, cart, setCart, userId,
                     Are you craving authentic <strong>{restaurant.cuisine} food</strong>? {restaurant.name} is one of the <strong>best restaurants</strong> for satisfying your hunger with high-quality ingredients and traditional recipes. Whether you're looking for a quick lunch or a hearty dinner, our menu has something for everyone.
                 </p>
                 <p>
-                    By choosing <strong>food delivery from {restaurant.name}</strong> through FoodzySwift, you're guaranteed a seamless experience. We prioritize speed and food safety, ensuring that your meal arrives fresh and hot. Don't forget to check our <strong>daily deals</strong> and special offers to get the best value on your favorite dishes. Order now and taste why we are a local favorite!
+                    By choosing <strong>food delivery from {restaurant.name}</strong> through BhaiTuKha, you're guaranteed a seamless experience. We prioritize speed and food safety, ensuring that your meal arrives fresh and hot. Don't forget to check our <strong>daily deals</strong> and special offers to get the best value on your favorite dishes. Order now and taste why we are a local favorite!
                 </p>
             </div>
         </div>
@@ -1270,7 +1270,7 @@ const CartPage = ({ cart, setCart, setCurrentPage, userId, setModalMessage, setA
   useEffect(() => {
     trackAnalytics('page_view', { page: 'cart', userId });
     updateMeta(
-        "Your Cart | Secure Checkout | FoodzySwift Food Delivery",
+        "Your Cart | Secure Checkout | BhaiTuKha Food Delivery",
         "Review your selected delicious meals and proceed to secure checkout. Fast and reliable food delivery in India starts here."
     );
   }, [userId]);
@@ -1515,7 +1515,7 @@ const stepIcons = [
   useEffect(() => {
     trackAnalytics('page_view', { page: 'tracking', userId });
     updateMeta(
-        "Live Order Tracking | FoodzySwift Delivery",
+        "Live Order Tracking | BhaiTuKha Delivery",
         "Track your food order in real-time. See when your meal is being prepared, picked up, and delivered to your doorstep."
     );
   }, [userId]);
@@ -1679,8 +1679,8 @@ useEffect(() => {
 if (!userId || !db) return;
 trackAnalytics('page_view', { page: 'history', userId });
 updateMeta(
-    "My Order History | Past Meals | FoodzySwift",
-    "View your past orders and reorder your favorite meals easily. Your culinary journey with FoodzySwift, all in one place."
+    "My Order History | Past Meals | BhaiTuKha",
+    "View your past orders and reorder your favorite meals easily. Your culinary journey with BhaiTuKha, all in one place."
 );
 
 const ordersCollection = collection(db, `artifacts/${appId}/users/${userId}/orders`);
@@ -1783,8 +1783,8 @@ useEffect(() => {
     useEffect(() => {
         trackAnalytics('page_view', { page: 'profile', userId });
         updateMeta(
-            "My Profile | Account Settings | FoodzySwift",
-            "Manage your FoodzySwift account, delivery addresses, and personal preferences for a customized food delivery experience."
+            "My Profile | Account Settings | BhaiTuKha",
+            "Manage your BhaiTuKha account, delivery addresses, and personal preferences for a customized food delivery experience."
         );
     }, [userId, userEmail]);
 
@@ -1879,10 +1879,10 @@ const AuthPage = ({ setCurrentPage, setModalMessage }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const title = isLogin ? "FoodzySwift | Login to Order Food" : "FoodzySwift | Create an Account";
+        const title = isLogin ? "BhaiTuKha | Login to Order Food" : "BhaiTuKha | Create an Account";
         const desc = isLogin 
-            ? "Sign in to your FoodzySwift account to place orders, track delivery, and manage your preferences." 
-            : "Join FoodzySwift today and get the best food delivered to your doorstep. Create an account for faster checkout and exclusive deals.";
+            ? "Sign in to your BhaiTuKha account to place orders, track delivery, and manage your preferences." 
+            : "Join BhaiTuKha today and get the best food delivered to your doorstep. Create an account for faster checkout and exclusive deals.";
         updateMeta(title, desc);
         setError(null); // Clear error when switching mode
     }, [isLogin]);
@@ -1914,7 +1914,7 @@ const AuthPage = ({ setCurrentPage, setModalMessage }) => {
                 trackAnalytics('login', { method: 'email' });
             } else {
                 await createUserWithEmailAndPassword(auth, email, password);
-                setModalMessage("🎉 Account created successfully! Welcome to FoodzySwift.");
+                setModalMessage("🎉 Account created successfully! Welcome to BhaiTuKha.");
                 trackAnalytics('signup', { method: 'email' });
             }
             // Success: onAuthStateChanged listener handles state update and redirection
@@ -1938,10 +1938,10 @@ const AuthPage = ({ setCurrentPage, setModalMessage }) => {
         <div className="pt-24 pb-8 min-h-screen bg-gray-100 flex items-center justify-center">
             <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-2xl border-t-4 border-[#E94458] mx-4">
                 <h1 className="text-3xl font-extrabold text-gray-900 text-center mb-6">
-                    {isLogin ? 'Login to FoodzySwift' : 'Create an Account'}
+                    {isLogin ? 'Login to BhaiTuKha' : 'Create an Account'}
                 </h1>
                 <p className="text-center text-gray-500 mb-8">
-                    {isLogin ? 'Sign in to place your order and track delivery.' : 'Join the FoodzySwift community!'}
+                    {isLogin ? 'Sign in to place your order and track delivery.' : 'Join the BhaiTuKha community!'}
                 </p>
 
                 <form onSubmit={handleAuth} className="space-y-4">
@@ -2023,8 +2023,8 @@ const AuthPage = ({ setCurrentPage, setModalMessage }) => {
                 >
                     {/* FIX: Google Icon Visibility - Use the required Base64 image URL */}
                     <img 
-                        src="https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/googlelogo.png" 
-                        alt="Google logo for secure authentication on FoodzySwift" 
+                        src="https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/googlelogo.png" 
+                        alt="Google logo for secure authentication on BhaiTuKha" 
                         className="w-5 h-5" 
                         loading="lazy"
                     />
@@ -2052,8 +2052,8 @@ const AuthPage = ({ setCurrentPage, setModalMessage }) => {
 const FoodDeliveryDelhi = ({ setCurrentPage }) => {
     useEffect(() => {
         updateMeta(
-            "Food Delivery in Delhi | Order Food Online Delhi | FoodzySwift",
-            "Get the fastest food delivery in Delhi with FoodzySwift. Order from top restaurants in CP, South Delhi, and more. Authentic flavors delivered hot and fresh."
+            "Food Delivery in Delhi | Order Food Online Delhi | BhaiTuKha",
+            "Get the fastest food delivery in Delhi with BhaiTuKha. Order from top restaurants in CP, South Delhi, and more. Authentic flavors delivered hot and fresh."
         );
     }, []);
 
@@ -2062,10 +2062,10 @@ const FoodDeliveryDelhi = ({ setCurrentPage }) => {
             <div className="container mx-auto px-4 max-w-4xl">
                 <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Food Delivery in Delhi</h1>
                 <div className="bg-white p-8 rounded-xl shadow-lg prose prose-red max-w-none text-gray-600 leading-relaxed">
-                    <p>Delhi, the heart of India, is a melting pot of cultures and, more importantly, flavors. From the narrow lanes of Old Delhi serving legendary kebabs to the upscale cafes in South Delhi, the city is a paradise for food lovers. At FoodzySwift, we bring the best of <strong>food delivery in Delhi</strong> right to your doorstep.</p>
+                    <p>Delhi, the heart of India, is a melting pot of cultures and, more importantly, flavors. From the narrow lanes of Old Delhi serving legendary kebabs to the upscale cafes in South Delhi, the city is a paradise for food lovers. At BhaiTuKha, we bring the best of <strong>food delivery in Delhi</strong> right to your doorstep.</p>
                     
-                    <h2 className="text-2xl font-bold text-gray-800 mt-6">Why Order Food Online in Delhi with FoodzySwift?</h2>
-                    <p>When you <strong>order food online in Delhi</strong>, you want speed, variety, and quality. FoodzySwift delivers on all fronts. Whether you are craving the rich Butter Chicken of Pandara Road, the spicy Chole Bhature of Rajouri Garden, or the sophisticated Sushi from a fine-dining restaurant in Vasant Kunj, we have you covered.</p>
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">Why Order Food Online in Delhi with BhaiTuKha?</h2>
+                    <p>When you <strong>order food online in Delhi</strong>, you want speed, variety, and quality. BhaiTuKha delivers on all fronts. Whether you are craving the rich Butter Chicken of Pandara Road, the spicy Chole Bhature of Rajouri Garden, or the sophisticated Sushi from a fine-dining restaurant in Vasant Kunj, we have you covered.</p>
                     
                     <h2 className="text-2xl font-bold text-gray-800 mt-6">Top Areas We Serve in Delhi</h2>
                     <ul className="list-disc pl-5 space-y-2">
@@ -2078,7 +2078,7 @@ const FoodDeliveryDelhi = ({ setCurrentPage }) => {
                     <h2 className="text-2xl font-bold text-gray-800 mt-6">The Culinary Heritage of Delhi</h2>
                     <p>Delhi's food story is centuries old. The Mughal influence is evident in the rich gravies and tandoori items found in areas like Jama Masjid. Meanwhile, the post-independence era brought flavors from Punjab, giving us the iconic Dal Makhani and Tandoori Chicken. Today, the city embraces global trends, from artisanal sourdough pizzas to authentic pan-Asian delicacies. <strong>Food delivery services</strong> have made it possible to enjoy this rich heritage without leaving your home.</p>
 
-                    <p>Don't wait! Experience the best <strong>Delhi food delivery</strong> today. Whether it's a late-night snack or a grand family dinner, FoodzySwift is your trusted partner for all things delicious in the capital.</p>
+                    <p>Don't wait! Experience the best <strong>Delhi food delivery</strong> today. Whether it's a late-night snack or a grand family dinner, BhaiTuKha is your trusted partner for all things delicious in the capital.</p>
                 </div>
                 <div className="mt-8 text-center">
                     <button onClick={() => setCurrentPage('home')} className="px-6 py-3 bg-[#E94458] text-white font-bold rounded-lg hover:bg-red-700 transition shadow-lg">Start Ordering in Delhi</button>
@@ -2091,8 +2091,8 @@ const FoodDeliveryDelhi = ({ setCurrentPage }) => {
 const BestRestaurantsPage = ({ setCurrentPage }) => {
     useEffect(() => {
         updateMeta(
-            "Best Restaurants in India | Top Rated Food Delivery | FoodzySwift",
-            "Discover the highest-rated restaurants in India on FoodzySwift. From fine dining to local favorites, explore the best places to order food online today."
+            "Best Restaurants in India | Top Rated Food Delivery | BhaiTuKha",
+            "Discover the highest-rated restaurants in India on BhaiTuKha. From fine dining to local favorites, explore the best places to order food online today."
         );
     }, []);
 
@@ -2101,10 +2101,10 @@ const BestRestaurantsPage = ({ setCurrentPage }) => {
             <div className="container mx-auto px-4 max-w-4xl">
                 <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Best Restaurants in India</h1>
                 <div className="bg-white p-8 rounded-xl shadow-lg prose prose-red max-w-none text-gray-600 leading-relaxed">
-                    <p>India's culinary landscape is as diverse as its geography. Finding the <strong>best restaurants in India</strong> can be a journey of a lifetime. At FoodzySwift, we simplify this for you by curating a list of top-rated establishments that consistently deliver excellence in taste and service.</p>
+                    <p>India's culinary landscape is as diverse as its geography. Finding the <strong>best restaurants in India</strong> can be a journey of a lifetime. At BhaiTuKha, we simplify this for you by curating a list of top-rated establishments that consistently deliver excellence in taste and service.</p>
                     
                     <h2 className="text-2xl font-bold text-gray-800 mt-6">What Makes a Restaurant 'The Best'?</h2>
-                    <p>At FoodzySwift, we rank restaurants based on several key factors: <strong>customer ratings</strong>, consistency in quality, speed of delivery, and hygiene standards. Our 'Best Restaurants' list includes hidden gems and famous chains alike, ensuring you always have access to <strong>top-rated food delivery</strong>.</p>
+                    <p>At BhaiTuKha, we rank restaurants based on several key factors: <strong>customer ratings</strong>, consistency in quality, speed of delivery, and hygiene standards. Our 'Best Restaurants' list includes hidden gems and famous chains alike, ensuring you always have access to <strong>top-rated food delivery</strong>.</p>
                     
                     <h2 className="text-2xl font-bold text-gray-800 mt-6">Top Categories for Every Craving</h2>
                     <p>Whether you're looking for a romantic dinner or a quick solo meal, our categories help you find the perfect match:</p>
@@ -2118,7 +2118,7 @@ const BestRestaurantsPage = ({ setCurrentPage }) => {
                     <h2 className="text-2xl font-bold text-gray-800 mt-6">Trending Restaurants This Week</h2>
                     <p>The food scene is always evolving. This week, we see a surge in popularity for authentic wood-fired pizzas and artisanal North Indian cuisine. Explore our live rankings to see which restaurants are winning hearts in your city right now.</p>
 
-                    <p>Ready to eat? Browse our <strong>best restaurants</strong> and discover your new favorite meal. With FoodzySwift, the finest flavors of India are just a click away.</p>
+                    <p>Ready to eat? Browse our <strong>best restaurants</strong> and discover your new favorite meal. With BhaiTuKha, the finest flavors of India are just a click away.</p>
                 </div>
                 <div className="mt-8 text-center">
                     <button onClick={() => setCurrentPage('home')} className="px-6 py-3 bg-[#E94458] text-white font-bold rounded-lg hover:bg-red-700 transition shadow-lg">Explore Best Restaurants</button>
@@ -2131,27 +2131,27 @@ const BestRestaurantsPage = ({ setCurrentPage }) => {
 const OrderFoodOnlinePage = ({ setCurrentPage }) => {
     useEffect(() => {
         updateMeta(
-            "Order Food Online India | FoodzySwift Fastest Delivery",
-            "FoodzySwift makes it simple to order food online in India. Explore the best restaurants in Delhi, Noida, and other cities with online food delivery services designed for convenience."
+            "Order Food Online India | BhaiTuKha Fastest Delivery",
+            "BhaiTuKha makes it simple to order food online in India. Explore the best restaurants in Delhi, Noida, and other cities with online food delivery services designed for convenience."
         );
     }, []);
 
     return (
         <div className="pt-24 pb-8 min-h-screen bg-gray-50">
             <div className="container mx-auto px-4 max-w-4xl">
-                <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Order Food Online with FoodzySwift</h1>
+                <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Order Food Online with BhaiTuKha</h1>
                 <div className="bg-white p-8 rounded-xl shadow-lg prose prose-red max-w-none text-gray-600 leading-relaxed">
                     <p>
-                        <strong>FoodzySwift</strong> is an online food delivery platform where users can <strong>order food online</strong> easily from the <strong>best restaurants in India</strong>. If you are looking for <strong>food delivery near me</strong>, <strong>fast food delivery</strong>, or <strong>affordable food delivery options</strong>, FoodzySwift provides a seamless experience with quick and reliable service.
+                        <strong>BhaiTuKha</strong> is an online food delivery platform where users can <strong>order food online</strong> easily from the <strong>best restaurants in India</strong>. If you are looking for <strong>food delivery near me</strong>, <strong>fast food delivery</strong>, or <strong>affordable food delivery options</strong>, BhaiTuKha provides a seamless experience with quick and reliable service.
                     </p>
                     <p>
                         Discover <strong>top restaurants near you</strong> and enjoy delicious meals with <strong>home delivery</strong>, including <strong>pizza delivery</strong>, <strong>burger delivery</strong>, <strong>North Indian food delivery</strong>, <strong>Chinese food delivery</strong>, and <strong>veg food delivery</strong>.
                     </p>
                     
                     <h2 className="text-2xl font-bold text-gray-800 mt-6">Speed and Quality Guaranteed</h2>
-                    <p>Whether you want <strong>late night food delivery</strong>, <strong>cheap food delivery</strong>, or <strong>quick food delivery under 30 minutes</strong>, FoodzySwift makes it simple to <strong>order food online in India</strong>. Explore the <strong>best restaurants in Delhi, Noida</strong>, and other cities with <strong>online food delivery services</strong> designed for convenience, speed, and quality.</p>
+                    <p>Whether you want <strong>late night food delivery</strong>, <strong>cheap food delivery</strong>, or <strong>quick food delivery under 30 minutes</strong>, BhaiTuKha makes it simple to <strong>order food online in India</strong>. Explore the <strong>best restaurants in Delhi, Noida</strong>, and other cities with <strong>online food delivery services</strong> designed for convenience, speed, and quality.</p>
                     
-                    <h2 className="text-2xl font-bold text-gray-800 mt-6">How to Use FoodzySwift</h2>
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">How to Use BhaiTuKha</h2>
                     <ol className="list-decimal pl-5 space-y-2">
                         <li><strong>Set Your Location:</strong> Use our GPS feature to find restaurants delivering near you.</li>
                         <li><strong>Browse & Choose:</strong> Explore budget-friendly meals and top-rated dishes.</li>
@@ -2159,7 +2159,7 @@ const OrderFoodOnlinePage = ({ setCurrentPage }) => {
                         <li><strong>Relax & Eat:</strong> Benefit from our fast delivery food services.</li>
                     </ol>
 
-                    <p>Find <strong>budget-friendly meals</strong>, <strong>top-rated dishes</strong>, and <strong>fast delivery food services</strong> all in one place with FoodzySwift, your <strong>trusted online food delivery website in India</strong>.</p>
+                    <p>Find <strong>budget-friendly meals</strong>, <strong>top-rated dishes</strong>, and <strong>fast delivery food services</strong> all in one place with BhaiTuKha, your <strong>trusted online food delivery website in India</strong>.</p>
                 </div>
                 <div className="mt-8 text-center">
                     <button onClick={() => setCurrentPage('home')} className="px-6 py-3 bg-[#E94458] text-white font-bold rounded-lg hover:bg-red-700 transition shadow-lg">Start Your Order Now</button>
@@ -2246,14 +2246,14 @@ const App = () => {
     updateSchema({
       "@context": "https://schema.org",
       "@type": "FoodDeliveryService",
-      "name": "FoodzySwift India",
+      "name": "BhaiTuKha India",
       "url": window.location.origin,
-      "logo": "https://raw.githubusercontent.com/Yatishydv/FoodzySwift/main/assets/foodzy-logo.png",
-      "description": "FoodzySwift is an online food delivery platform where users can order food online easily from the best restaurants in India. Fast delivery for pizza, burgers, and North Indian food.",
+      "logo": "https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/foodzy-logo.png",
+      "description": "BhaiTuKha is an online food delivery platform where users can order food online easily from the best restaurants in India. Fast delivery for pizza, burgers, and North Indian food.",
       "areaServed": "India",
       "provider": {
         "@type": "Organization",
-        "name": "FoodzySwift"
+        "name": "BhaiTuKha"
       }
     });
   }, []);
@@ -2303,7 +2303,7 @@ const App = () => {
                         if (isUserLoggedIn) {
                             // Set initial user details from Auth (will be overwritten by Firestore if available)
                             setUserEmail(user.email || 'N/A');
-                            setUserName(user.displayName || 'User FoodzySwift');
+                            setUserName(user.displayName || 'User BhaiTuKha');
                         } else {
                              setIsLoggedIn(false);
                         }
@@ -2399,12 +2399,12 @@ const App = () => {
         if (docSnap.exists()) {
             const profileData = docSnap.data();
             // Use Firestore data if available, otherwise fallback to Auth/default
-            setUserName(profileData.displayName || auth.currentUser.displayName || 'User FoodzySwift');
+            setUserName(profileData.displayName || auth.currentUser.displayName || 'User BhaiTuKha');
             setUserAddress(profileData.address || '456 Digital Marketing Lane, Jalandhar');
         } else {
             // If profile document doesn't exist, create it with Auth data as fallback
             const initialProfile = {
-                displayName: auth.currentUser.displayName || 'User FoodzySwift',
+                displayName: auth.currentUser.displayName || 'User BhaiTuKha',
                 address: '456 Digital Marketing Lane, Jalandhar',
                 email: auth.currentUser.email || 'N/A',
                 createdAt: new Date(),
@@ -2745,7 +2745,7 @@ const App = () => {
         <CloudOff className="w-16 h-16 text-red-500 mb-4" />
         <h2 className="3xl font-extrabold text-red-800 mb-2">Service Connection Failed</h2>
         <p className="text-lg text-red-700 mb-6">
-            FoodzySwift relies on Firebase services which appear unreachable.
+            BhaiTuKha relies on Firebase services which appear unreachable.
         </p>
         <div className="max-w-md bg-white p-4 rounded-lg shadow-md border border-red-200">
             <p className="font-semibold text-gray-800 mb-2">Error Details:</p>
@@ -2816,7 +2816,7 @@ const App = () => {
         ) : loading ? (
           <div className="min-h-screen flex flex-col items-center justify-center pt-24">
             <Loader className="w-12 h-12 text-[#E94458] animate-spin mb-4" />
-            <p className="text-gray-600">Connecting to FoodzySwift backend...</p>
+            <p className="text-gray-600">Connecting to BhaiTuKha backend...</p>
           </div>
         ) : (
             <>

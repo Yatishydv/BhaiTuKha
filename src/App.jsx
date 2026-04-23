@@ -1079,6 +1079,22 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
                     <p>
                         With <strong>late night food delivery</strong> and <strong>cheap food delivery</strong> deals, we ensure that you never go hungry. Find <strong>budget-friendly meals</strong> and <strong>top-rated dishes</strong> all in one place with BhaiTuKha, your trusted <strong>online food delivery website in India</strong>.
                     </p>
+
+                    <h3 className="text-2xl font-bold text-gray-800 mt-8">BhaiTuKha FAQ</h3>
+                    <div className="space-y-4 mt-4">
+                        <div>
+                            <h4 className="font-bold text-gray-900">What is BhaiTuKha?</h4>
+                            <p>BhaiTuKha (not to be confused with Bhai Tika) is India's premium online food delivery platform. We specialize in bringing the best restaurant meals to your doorstep within 30 minutes.</p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-gray-900">How do I order on BhaiTuKha?</h4>
+                            <p>Simply visit our homepage, select your location, browse the best restaurants, and click 'Order Now'. BhaiTuKha makes food ordering seamless and fast.</p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-gray-900">Where does BhaiTuKha deliver?</h4>
+                            <p>Currently, BhaiTuKha delivers in Delhi, Noida, and other major cities in India, offering the fastest food delivery service in the region.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

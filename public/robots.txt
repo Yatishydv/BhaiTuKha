@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://foodzy-eat.vercel.app/sitemap.xml
+Sitemap: https://bhaitukha.vercel.app/sitemap.xml

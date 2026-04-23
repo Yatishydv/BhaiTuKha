@@ -488,9 +488,9 @@ const NavigationBar = ({ setCurrentPage, cartItemCount, location, setLocation, s
   <header className="fixed top-0 left-0 right-0 bg-white shadow-lg z-20">
     <div className="container mx-auto px-4 py-3 flex justify-between items-center max-w-7xl">
       <div className="flex items-center space-x-6">
-        <h1 className="text-3xl font-extrabold text-[#E94458] cursor-pointer" onClick={() => setCurrentPage('home')}>
+        <span className="text-3xl font-extrabold text-[#E94458] cursor-pointer" onClick={() => setCurrentPage('home')}>
           Foodzy
-        </h1>
+        </span>
         <div className="hidden sm:flex items-center text-gray-600">
           <LocationSelector location={location} setLocation={setLocation} setModalMessage={setModalMessage} setCurrentDeliveryAddress={setCurrentDeliveryAddress} />
         </div>
@@ -549,7 +549,9 @@ const Footer = ({ setCurrentPage }) => (
             <li><button onClick={() => { setCurrentPage('home'); window.scrollTo(0, 0); }} className="hover:text-[#E94458]">Home</button></li>
             <li><button onClick={() => setCurrentPage('tracking')} className="hover:text-[#E94458]">Track Order</button></li>
             <li><button onClick={() => setCurrentPage('cart')} className="hover:text-[#E94458]">My Cart</button></li>
-            <li><button onClick={() => setCurrentPage('profile')} className="hover:text-[#E94458]">Profile</button></li>
+            <li><button onClick={() => setCurrentPage('delhi')} className="hover:text-[#E94458]">Food Delivery Delhi</button></li>
+            <li><button onClick={() => setCurrentPage('best-restaurants')} className="hover:text-[#E94458]">Best Restaurants</button></li>
+            <li><button onClick={() => setCurrentPage('order-food')} className="hover:text-[#E94458]">Order Online India</button></li>
           </ul>
         </div>
         <div>
@@ -757,8 +759,9 @@ const DishCard = ({ dish, cart, setCart }) => {
         >
             <img
                 src={dish.imgUrl.replace('100x100', '200x150')} 
-                alt={dish.name}
+                alt={`${dish.name} - delicious dish available for online delivery from Foodzy`}
                 className="w-full h-36 object-cover"
+                loading="lazy"
                 onError={(e) => { e.target.onerror = null; e.target.src = `https://placehold.co/200x150/f0f9ff/3b82f6?text=${dish.name.split(' ')[0]}` }} 
             />
             {/* RESTORED: Content area back to white background */}
@@ -802,12 +805,10 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
 
   useEffect(() => {
     trackAnalytics('page_view', { page: 'home', userId });
-    // MKT311: SEO - Inject Home Page Meta Description
-    document.title = "Foodzy | Order Food Online - Fast Local Delivery";
-    const metaDesc = document.querySelector('meta[name="description"]') || document.createElement('meta');
-    metaDesc.name = 'description';
-    metaDesc.content = 'Foodzy offers the fastest food delivery online. Find the best biryani, pizza, and vegan food near you with our local restaurant discovery platform.';
-    document.head.appendChild(metaDesc);
+    updateMeta(
+        "Foodzy Eat | Order Food Online in India | Fast Local Delivery",
+        "Foodzy Eat is India's leading online food delivery platform. Order food online easily from the best restaurants in India. Fast food delivery near you for Pizza, Burgers, and more!"
+    );
   }, [userId]);
 
   // Curate popular dishes to display on the home page (e.g., the first 8)
@@ -873,8 +874,9 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
             <img
                 // FIX: This image source now correctly points to the raw GitHub image content URL
                 src={restaurant.imageUrl}
-                alt={restaurant.name + ' restaurant image'}
+                alt={`${restaurant.name} - best restaurant in India for ${restaurant.cuisine} food delivery`}
                 className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
                 onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x200/cccccc/333333?text=Foodzy" }} // Fallback
             />
             {/* RESTORED: Content area back to white background */}
@@ -964,9 +966,9 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
             </div>
 
             <div className="relative z-10 max-w-3xl py-10">
-                <h2 className="text-5xl md:text-7xl font-extrabold mb-4 text-[#E94458] leading-tight drop-shadow-md">
-                    Hot Food. <br/> Zero Wait.
-                </h2>
+                <h1 className="text-5xl md:text-7xl font-extrabold mb-4 text-[#E94458] leading-tight drop-shadow-md">
+                    Order Food Online <br/> Fast Delivery.
+                </h1>
                 <p className="text-xl mb-8 font-medium text-gray-700">
                     Delivering the finest meals to <span className="font-bold underline text-gray-800">{location}</span>, faster than ever.
                 </p>
@@ -1054,6 +1056,33 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
             </div>
         </div>
         
+
+        {/* SEO CONTENT SECTION */}
+        <div className="px-4 py-16 mt-12 bg-white rounded-2xl shadow-sm border border-gray-100">
+            <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Foodzy Eat: Your Trusted Online Food Delivery Website in India</h2>
+                <div className="prose prose-red text-gray-600 leading-relaxed space-y-4">
+                    <p>
+                        <strong>Foodzy Eat</strong> is an online food delivery platform where users can <strong>order food online</strong> easily from the <strong>best restaurants in India</strong>. If you are looking for <strong>food delivery near me</strong>, <strong>fast food delivery</strong>, or <strong>affordable food delivery options</strong>, Foodzy Eat provides a seamless experience with quick and reliable service.
+                    </p>
+                    <p>
+                        Discover <strong>top restaurants near you</strong> and enjoy delicious meals with <strong>home delivery</strong>, including <strong>pizza delivery</strong>, <strong>burger delivery</strong>, <strong>North Indian food delivery</strong>, <strong>Chinese food delivery</strong>, and <strong>veg food delivery</strong>. Whether you want <strong>late night food delivery</strong>, <strong>cheap food delivery</strong>, or <strong>quick food delivery under 30 minutes</strong>, Foodzy Eat makes it simple to <strong>order food online in India</strong>.
+                    </p>
+                    <p>
+                        Explore the <strong>best restaurants in Delhi, Noida</strong>, and other cities with <strong>online food delivery services</strong> designed for convenience, speed, and quality. Find <strong>budget-friendly meals</strong>, <strong>top-rated dishes</strong>, and <strong>fast delivery food services</strong> all in one place with Foodzy Eat, your trusted <strong>online food delivery website in India</strong>.
+                    </p>
+                    
+                    <h3 className="text-2xl font-bold text-gray-800 mt-8">Explore a World of Cuisines</h3>
+                    <p>
+                        At Foodzy Eat, we understand that food is more than just sustenance; it's an experience. That's why we offer a diverse range of cuisines to choose from. Craving something spicy? Explore our Indian section featuring Butter Chicken, Paneer Tikka, and Dal Makhani. Looking for a quick bite? Our Burger and Sandwich categories are packed with delicious options from the top fast-food joints.
+                    </p>
+                    <p>
+                        We also cater to specific dietary needs. Our <strong>Vegan and Healthy</strong> categories are curated for those who prioritize wellness without sacrificing taste. Enjoy fresh salads, protein-packed bowls, and plant-based wraps delivered fresh.
+                    </p>
+                </div>
+            </div>
+        </div>
+
         {/* Floating Chatbot Button */}
         <button
             onClick={openChatbot}
@@ -1078,12 +1107,10 @@ const RestaurantMenuPage = ({ restaurant, setCurrentPage, cart, setCart, userId,
 
   useEffect(() => {
     trackAnalytics('page_view', { page: 'menu', restaurantId: restaurant.id, userId });
-    // MKT311: SEO - Update Title and Meta for specific restaurant
-    document.title = `${restaurant.name} Menu | Foodzy Delivery`;
-    const metaDesc = document.querySelector('meta[name="description"]') || document.createElement('meta');
-    metaDesc.name = 'description';
-    metaDesc.content = `View the full menu for ${restaurant.name}. Order ${restaurant.cuisine} food online now for fast delivery.`;
-    document.head.appendChild(metaDesc);
+    updateMeta(
+        `${restaurant.name} Menu | Order ${restaurant.cuisine} Food Online | Foodzy`,
+        `View the full menu for ${restaurant.name} on Foodzy. Order the best ${restaurant.cuisine} food online now for fast local delivery. Check out our daily deals!`
+    );
   }, [restaurant, userId]);
 
   const handleAddToCart = (dish) => {
@@ -1138,12 +1165,13 @@ const RestaurantMenuPage = ({ restaurant, setCurrentPage, cart, setCart, userId,
             <img
               // FIX APPLIED HERE: Using the direct, unmodified imageUrl from MOCK_RESTAURANTS
               src={restaurant.imageUrl} 
-              alt={`${restaurant.name} logo`}
+              alt={`${restaurant.name} official logo - best ${restaurant.cuisine} restaurant on Foodzy`}
               className="w-20 h-20 object-cover rounded-full border-4 border-gray-200"
+              loading="lazy"
               onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/80x80/cccccc/333333?text=Logo" }} // Fallback
             />
             <div>
-              <h2 className="text-3xl font-extrabold text-gray-900">{restaurant.name}</h2>
+              <h1 className="text-3xl font-extrabold text-gray-900">{restaurant.name}</h1>
               <p className="text-lg text-gray-600">{restaurant.cuisine}</p>
               <div className="flex items-center space-x-4 mt-1 text-sm">
                 <span className="flex items-center text-green-600 font-semibold"><Star className="w-4 h-4 mr-1 fill-green-500 stroke-none" />{restaurant.rating}</span>
@@ -1165,8 +1193,9 @@ const RestaurantMenuPage = ({ restaurant, setCurrentPage, cart, setCart, userId,
                     <div className="flex items-start space-x-4 flex-grow">
                       <img
                         src={dish.imgUrl} // Now using specific dish image URL
-                        alt={dish.imgAlt || `${dish.name} image`} // MKT311: SEO Alt Text
+                        alt={`${dish.name} - ${dish.desc} from ${restaurant.name} available for delivery`}
                         className="w-16 h-16 object-cover rounded-md flex-shrink-0"
+                        loading="lazy"
                         onError={(e) => { e.target.onerror = null; e.target.src = `https://placehold.co/80x80/cccccc/333333?text=${dish.name.split(' ')[0]}` }} // Fallback
                       />
                       <div className='flex-grow'>
@@ -1204,6 +1233,19 @@ const RestaurantMenuPage = ({ restaurant, setCurrentPage, cart, setCart, userId,
           </div>
         ))}
 
+        {/* RESTAURANT SEO CONTENT */}
+        <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mt-12">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Experience the best {restaurant.cuisine} food from {restaurant.name}</h3>
+            <div className="prose prose-red text-gray-600 text-sm leading-relaxed">
+                <p>
+                    Are you craving authentic <strong>{restaurant.cuisine} food</strong>? {restaurant.name} is one of the <strong>best restaurants</strong> for satisfying your hunger with high-quality ingredients and traditional recipes. Whether you're looking for a quick lunch or a hearty dinner, our menu has something for everyone.
+                </p>
+                <p>
+                    By choosing <strong>food delivery from {restaurant.name}</strong> through Foodzy, you're guaranteed a seamless experience. We prioritize speed and food safety, ensuring that your meal arrives fresh and hot. Don't forget to check our <strong>daily deals</strong> and special offers to get the best value on your favorite dishes. Order now and taste why we are a local favorite!
+                </p>
+            </div>
+        </div>
+
       </div>
        {/* Floating Cart CTA */}
        {cart.length > 0 && (
@@ -1227,7 +1269,10 @@ const CartPage = ({ cart, setCart, setCurrentPage, userId, setModalMessage, setA
 
   useEffect(() => {
     trackAnalytics('page_view', { page: 'cart', userId });
-    document.title = "Foodzy | Secure Checkout";
+    updateMeta(
+        "Your Cart | Secure Checkout | Foodzy Food Delivery",
+        "Review your selected delicious meals and proceed to secure checkout. Fast and reliable food delivery in India starts here."
+    );
   }, [userId]);
 
   const deliveryFee = 5.00;
@@ -1356,7 +1401,7 @@ const handleUseCurrentLocation = () => {
   return (
     <div className="pt-24 pb-8 min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 max-w-4xl">
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-8">Your Cart</h2>
+        <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Your Cart</h1>
         <div className="grid md:grid-cols-3 gap-8">
           {/* Cart Items List (2/3 width) */}
           <div className="md:col-span-2 space-y-4">
@@ -1469,12 +1514,15 @@ const stepIcons = [
   // Old simulation/listener logic removed, only setup effect remains
   useEffect(() => {
     trackAnalytics('page_view', { page: 'tracking', userId });
-    document.title = "Foodzy | Live Order Tracking";
+    updateMeta(
+        "Live Order Tracking | Foodzy Delivery",
+        "Track your food order in real-time. See when your meal is being prepared, picked up, and delivered to your doorstep."
+    );
+  }, [userId]);
 
     // Since the actual order update logic is now in App.jsx, this component only needs to mount and track analytics.
     // The status and loading are provided via props.
-   
-  }, [userId]);
+
 
   if (appLoading) {
     return (
@@ -1517,10 +1565,10 @@ Looks like you're all set! Check your profile for past orders or start a new one
            
             {/* 1. HEADER AND CURRENT STATUS ALERT */}
             <div className="bg-white p-6 rounded-xl shadow-2xl mb-8 border-t-4 border-[#E94458]">
-                <h2 className="text-4xl font-extrabold text-gray-900 mb-2 flex items-center">
+                <h1 className="text-4xl font-extrabold text-gray-900 mb-2 flex items-center">
                     <Truck className="w-8 h-8 mr-3 text-[#E94458]" />
                     Live Order Tracking
-                </h2>
+                </h1>
                 <p className="text-lg text-gray-600 mb-6">
                     Order <span className="font-mono text-gray-800 font-semibold">#{order.id.substring(order.id.length - 8)}</span> from {order.items[0]?.restaurantName || 'Multiple Restaurants'}
                 </p>
@@ -1630,7 +1678,10 @@ const [loading, setLoading] = useState(true);
 useEffect(() => {
 if (!userId || !db) return;
 trackAnalytics('page_view', { page: 'history', userId });
-document.title = "Foodzy | Order History";
+updateMeta(
+    "My Order History | Past Meals | Foodzy",
+    "View your past orders and reorder your favorite meals easily. Your culinary journey with Foodzy, all in one place."
+);
 
 const ordersCollection = collection(db, `artifacts/${appId}/users/${userId}/orders`);
 // Query for all orders to display a full history (Delivered or otherwise, although the main app focuses on Delivered)
@@ -1661,10 +1712,10 @@ return (
 return (
 <div className="pt-24 pb-8 min-h-screen bg-gray-50">
 <div className="container mx-auto px-4 max-w-2xl">
-<h2 className="text-4xl font-extrabold text-gray-900 mb-8 flex items-center">
+<h1 className="text-4xl font-extrabold text-gray-900 mb-8 flex items-center">
 <Archive className="w-8 h-8 mr-3 text-blue-600" />
 My Order History
-</h2>
+</h1>
 
 {orderHistory.length === 0 ? (
 <div className="bg-white p-8 rounded-xl shadow-lg text-center">
@@ -1731,7 +1782,10 @@ useEffect(() => {
 
     useEffect(() => {
         trackAnalytics('page_view', { page: 'profile', userId });
-        document.title = "Foodzy | User Profile";
+        updateMeta(
+            "My Profile | Account Settings | Foodzy",
+            "Manage your Foodzy account, delivery addresses, and personal preferences for a customized food delivery experience."
+        );
     }, [userId, userEmail]);
 
     const handleSave = () => {
@@ -1742,10 +1796,10 @@ useEffect(() => {
     return (
 <div className="pt-24 pb-8 min-h-screen bg-gray-50">
 <div className="container mx-auto px-4 max-w-2xl">
-<h2 className="text-4xl font-extrabold text-gray-900 mb-8 flex items-center">
+<h1 className="text-4xl font-extrabold text-gray-900 mb-8 flex items-center">
 <User className="w-8 h-8 mr-3 text-[#E94458]" />
 My Profile
-</h2>
+</h1>
 
 <div className="bg-white p-8 rounded-xl shadow-xl space-y-6">
 <div className="text-center pb-4 border-b border-gray-100">
@@ -1825,7 +1879,11 @@ const AuthPage = ({ setCurrentPage, setModalMessage }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        document.title = isLogin ? "Foodzy | Login" : "Foodzy | Sign Up";
+        const title = isLogin ? "Foodzy | Login to Order Food" : "Foodzy | Create an Account";
+        const desc = isLogin 
+            ? "Sign in to your Foodzy account to place orders, track delivery, and manage your preferences." 
+            : "Join Foodzy today and get the best food delivered to your doorstep. Create an account for faster checkout and exclusive deals.";
+        updateMeta(title, desc);
         setError(null); // Clear error when switching mode
     }, [isLogin]);
     
@@ -1879,9 +1937,9 @@ const AuthPage = ({ setCurrentPage, setModalMessage }) => {
     return (
         <div className="pt-24 pb-8 min-h-screen bg-gray-100 flex items-center justify-center">
             <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-2xl border-t-4 border-[#E94458] mx-4">
-                <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-6">
+                <h1 className="text-3xl font-extrabold text-gray-900 text-center mb-6">
                     {isLogin ? 'Login to Foodzy' : 'Create an Account'}
-                </h2>
+                </h1>
                 <p className="text-center text-gray-500 mb-8">
                     {isLogin ? 'Sign in to place your order and track delivery.' : 'Join the Foodzy community!'}
                 </p>
@@ -1966,8 +2024,9 @@ const AuthPage = ({ setCurrentPage, setModalMessage }) => {
                     {/* FIX: Google Icon Visibility - Use the required Base64 image URL */}
                     <img 
                         src="https://raw.githubusercontent.com/Yatishydv/Foodzy/main/assets/googlelogo.png" 
-                        alt="Google logo" 
+                        alt="Google logo for secure authentication on Foodzy" 
                         className="w-5 h-5" 
+                        loading="lazy"
                     />
                     <span>Continue with Google</span>
                 </button>
@@ -1987,6 +2046,151 @@ const AuthPage = ({ setCurrentPage, setModalMessage }) => {
     );
 };
 
+
+// --- NEW SEO PAGES ---
+
+const FoodDeliveryDelhi = ({ setCurrentPage }) => {
+    useEffect(() => {
+        updateMeta(
+            "Food Delivery in Delhi | Order Food Online Delhi | Foodzy",
+            "Get the fastest food delivery in Delhi with Foodzy. Order from top restaurants in CP, South Delhi, and more. Authentic flavors delivered hot and fresh."
+        );
+    }, []);
+
+    return (
+        <div className="pt-24 pb-8 min-h-screen bg-gray-50">
+            <div className="container mx-auto px-4 max-w-4xl">
+                <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Food Delivery in Delhi</h1>
+                <div className="bg-white p-8 rounded-xl shadow-lg prose prose-red max-w-none text-gray-600 leading-relaxed">
+                    <p>Delhi, the heart of India, is a melting pot of cultures and, more importantly, flavors. From the narrow lanes of Old Delhi serving legendary kebabs to the upscale cafes in South Delhi, the city is a paradise for food lovers. At Foodzy, we bring the best of <strong>food delivery in Delhi</strong> right to your doorstep.</p>
+                    
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">Why Order Food Online in Delhi with Foodzy?</h2>
+                    <p>When you <strong>order food online in Delhi</strong>, you want speed, variety, and quality. Foodzy delivers on all fronts. Whether you are craving the rich Butter Chicken of Pandara Road, the spicy Chole Bhature of Rajouri Garden, or the sophisticated Sushi from a fine-dining restaurant in Vasant Kunj, we have you covered.</p>
+                    
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">Top Areas We Serve in Delhi</h2>
+                    <ul className="list-disc pl-5 space-y-2">
+                        <li><strong>Connaught Place (CP):</strong> The commercial hub with a vast range of cuisines.</li>
+                        <li><strong>South Delhi:</strong> Home to some of the city's most premium and trending restaurants.</li>
+                        <li><strong>North Delhi (GTB Nagar):</strong> A student hub with affordable and delicious street food and cafes.</li>
+                        <li><strong>West Delhi:</strong> Famous for its massive variety of North Indian and fusion food.</li>
+                    </ul>
+
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">The Culinary Heritage of Delhi</h2>
+                    <p>Delhi's food story is centuries old. The Mughal influence is evident in the rich gravies and tandoori items found in areas like Jama Masjid. Meanwhile, the post-independence era brought flavors from Punjab, giving us the iconic Dal Makhani and Tandoori Chicken. Today, the city embraces global trends, from artisanal sourdough pizzas to authentic pan-Asian delicacies. <strong>Food delivery services</strong> have made it possible to enjoy this rich heritage without leaving your home.</p>
+
+                    <p>Don't wait! Experience the best <strong>Delhi food delivery</strong> today. Whether it's a late-night snack or a grand family dinner, Foodzy is your trusted partner for all things delicious in the capital.</p>
+                </div>
+                <div className="mt-8 text-center">
+                    <button onClick={() => setCurrentPage('home')} className="px-6 py-3 bg-[#E94458] text-white font-bold rounded-lg hover:bg-red-700 transition shadow-lg">Start Ordering in Delhi</button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const BestRestaurantsPage = ({ setCurrentPage }) => {
+    useEffect(() => {
+        updateMeta(
+            "Best Restaurants in India | Top Rated Food Delivery | Foodzy",
+            "Discover the highest-rated restaurants in India on Foodzy. From fine dining to local favorites, explore the best places to order food online today."
+        );
+    }, []);
+
+    return (
+        <div className="pt-24 pb-8 min-h-screen bg-gray-50">
+            <div className="container mx-auto px-4 max-w-4xl">
+                <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Best Restaurants in India</h1>
+                <div className="bg-white p-8 rounded-xl shadow-lg prose prose-red max-w-none text-gray-600 leading-relaxed">
+                    <p>India's culinary landscape is as diverse as its geography. Finding the <strong>best restaurants in India</strong> can be a journey of a lifetime. At Foodzy, we simplify this for you by curating a list of top-rated establishments that consistently deliver excellence in taste and service.</p>
+                    
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">What Makes a Restaurant 'The Best'?</h2>
+                    <p>At Foodzy, we rank restaurants based on several key factors: <strong>customer ratings</strong>, consistency in quality, speed of delivery, and hygiene standards. Our 'Best Restaurants' list includes hidden gems and famous chains alike, ensuring you always have access to <strong>top-rated food delivery</strong>.</p>
+                    
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">Top Categories for Every Craving</h2>
+                    <p>Whether you're looking for a romantic dinner or a quick solo meal, our categories help you find the perfect match:</p>
+                    <ul className="list-disc pl-5 space-y-2">
+                        <li><strong>Fine Dining:</strong> Premium restaurants that offer a gourmet experience at home.</li>
+                        <li><strong>Local Favorites:</strong> The most loved eateries in your neighborhood.</li>
+                        <li><strong>Quick Service Restaurants (QSR):</strong> For when you need a fast and filling meal.</li>
+                        <li><strong>Healthy Eats:</strong> Top-rated spots for salads, bowls, and organic meals.</li>
+                    </ul>
+
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">Trending Restaurants This Week</h2>
+                    <p>The food scene is always evolving. This week, we see a surge in popularity for authentic wood-fired pizzas and artisanal North Indian cuisine. Explore our live rankings to see which restaurants are winning hearts in your city right now.</p>
+
+                    <p>Ready to eat? Browse our <strong>best restaurants</strong> and discover your new favorite meal. With Foodzy, the finest flavors of India are just a click away.</p>
+                </div>
+                <div className="mt-8 text-center">
+                    <button onClick={() => setCurrentPage('home')} className="px-6 py-3 bg-[#E94458] text-white font-bold rounded-lg hover:bg-red-700 transition shadow-lg">Explore Best Restaurants</button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const OrderFoodOnlinePage = ({ setCurrentPage }) => {
+    useEffect(() => {
+        updateMeta(
+            "Order Food Online India | Foodzy Eat Fastest Delivery",
+            "Foodzy Eat makes it simple to order food online in India. Explore the best restaurants in Delhi, Noida, and other cities with online food delivery services designed for convenience."
+        );
+    }, []);
+
+    return (
+        <div className="pt-24 pb-8 min-h-screen bg-gray-50">
+            <div className="container mx-auto px-4 max-w-4xl">
+                <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Order Food Online with Foodzy Eat</h1>
+                <div className="bg-white p-8 rounded-xl shadow-lg prose prose-red max-w-none text-gray-600 leading-relaxed">
+                    <p>
+                        <strong>Foodzy Eat</strong> is an online food delivery platform where users can <strong>order food online</strong> easily from the <strong>best restaurants in India</strong>. If you are looking for <strong>food delivery near me</strong>, <strong>fast food delivery</strong>, or <strong>affordable food delivery options</strong>, Foodzy Eat provides a seamless experience with quick and reliable service.
+                    </p>
+                    <p>
+                        Discover <strong>top restaurants near you</strong> and enjoy delicious meals with <strong>home delivery</strong>, including <strong>pizza delivery</strong>, <strong>burger delivery</strong>, <strong>North Indian food delivery</strong>, <strong>Chinese food delivery</strong>, and <strong>veg food delivery</strong>.
+                    </p>
+                    
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">Speed and Quality Guaranteed</h2>
+                    <p>Whether you want <strong>late night food delivery</strong>, <strong>cheap food delivery</strong>, or <strong>quick food delivery under 30 minutes</strong>, Foodzy Eat makes it simple to <strong>order food online in India</strong>. Explore the <strong>best restaurants in Delhi, Noida</strong>, and other cities with <strong>online food delivery services</strong> designed for convenience, speed, and quality.</p>
+                    
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">How to Use Foodzy Eat</h2>
+                    <ol className="list-decimal pl-5 space-y-2">
+                        <li><strong>Set Your Location:</strong> Use our GPS feature to find restaurants delivering near you.</li>
+                        <li><strong>Browse & Choose:</strong> Explore budget-friendly meals and top-rated dishes.</li>
+                        <li><strong>Add to Cart:</strong> Customize your order and check out securely.</li>
+                        <li><strong>Relax & Eat:</strong> Benefit from our fast delivery food services.</li>
+                    </ol>
+
+                    <p>Find <strong>budget-friendly meals</strong>, <strong>top-rated dishes</strong>, and <strong>fast delivery food services</strong> all in one place with Foodzy Eat, your <strong>trusted online food delivery website in India</strong>.</p>
+                </div>
+                <div className="mt-8 text-center">
+                    <button onClick={() => setCurrentPage('home')} className="px-6 py-3 bg-[#E94458] text-white font-bold rounded-lg hover:bg-red-700 transition shadow-lg">Start Your Order Now</button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+// --- SEO HELPERS ---
+const updateMeta = (title, description) => {
+    document.title = title;
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.name = 'description';
+        document.head.appendChild(metaDesc);
+    }
+    metaDesc.content = description;
+};
+
+const updateSchema = (schemaData) => {
+    let script = document.getElementById('seo-schema');
+    if (!script) {
+        script = document.createElement('script');
+        script.id = 'seo-schema';
+        script.type = 'application/ld+json';
+        document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(schemaData);
+};
 
 // --- MAIN APPLICATION COMPONENT ---
 
@@ -2035,6 +2239,23 @@ const App = () => {
     script.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
     script.onload = () => console.log("THREE.js loaded for 3D animation.");
     document.head.appendChild(script);
+  }, []);
+
+  // Inject Global Schema
+  useEffect(() => {
+    updateSchema({
+      "@context": "https://schema.org",
+      "@type": "FoodDeliveryService",
+      "name": "Foodzy Eat India",
+      "url": window.location.origin,
+      "logo": "https://raw.githubusercontent.com/Yatishydv/Foodzy/main/assets/foodzy-logo.png",
+      "description": "Foodzy Eat is an online food delivery platform where users can order food online easily from the best restaurants in India. Fast delivery for pizza, burgers, and North Indian food.",
+      "areaServed": "India",
+      "provider": {
+        "@type": "Organization",
+        "name": "Foodzy Eat"
+      }
+    });
   }, []);
 
   // 1. Firebase Initialization and Authentication (FIXED onAuthStateChanged logic)
@@ -2507,6 +2728,12 @@ const App = () => {
                 />;
       case 'history':
         return <OrderHistoryPage userId={userId} setCurrentPage={setCurrentPage} />; // New page route
+      case 'delhi':
+        return <FoodDeliveryDelhi setCurrentPage={setCurrentPage} />;
+      case 'best-restaurants':
+        return <BestRestaurantsPage setCurrentPage={setCurrentPage} />;
+      case 'order-food':
+        return <OrderFoodOnlinePage setCurrentPage={setCurrentPage} />;
       default:
         return <HomePage restaurants={restaurants} setCurrentPage={setCurrentPage} setSelectedRestaurant={setSelectedRestaurant} userId={userId} setModalMessage={setModalMessage} location={location} openChatbot={() => setIsChatbotOpen(true)} cart={cart} setCart={setCart} />;
     }

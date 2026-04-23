@@ -806,8 +806,8 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
   useEffect(() => {
     trackAnalytics('page_view', { page: 'home', userId });
     updateMeta(
-        "BhaiTuKha | Order Food Online in India | Fast Local Delivery",
-        "BhaiTuKha is India's leading online food delivery platform. Order food online easily from the best restaurants in India. Fast food delivery near you for Pizza, Burgers, and more!"
+        "BhaiTuKha | #1 Online Food Delivery in India | Best Restaurants",
+        "BhaiTuKha is the easiest way to order food online in India. Get fast delivery from top restaurants near you. Search 'BhaiTuKha' for the best food deals!"
     );
   }, [userId]);
 
@@ -1060,24 +1060,24 @@ const HomePage = ({ restaurants, setCurrentPage, setSelectedRestaurant, userId, 
         {/* SEO CONTENT SECTION */}
         <div className="px-4 py-16 mt-12 bg-white rounded-2xl shadow-sm border border-gray-100">
             <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-extrabold text-gray-900 mb-6">BhaiTuKha: Your Trusted Online Food Delivery Website in India</h2>
+                <h2 className="text-3xl font-extrabold text-gray-900 mb-6">BhaiTuKha: India's Favorite Online Food Delivery Platform</h2>
                 <div className="prose prose-red text-gray-600 leading-relaxed space-y-4">
                     <p>
-                        <strong>BhaiTuKha</strong> is an online food delivery platform where users can <strong>order food online</strong> easily from the <strong>best restaurants in India</strong>. If you are looking for <strong>food delivery near me</strong>, <strong>fast food delivery</strong>, or <strong>affordable food delivery options</strong>, BhaiTuKha provides a seamless experience with quick and reliable service.
+                        <strong>BhaiTuKha</strong> is your go-to online food delivery platform where you can <strong>order food online</strong> with just a few clicks. Whether you are craving a spicy Indian meal or a cheesy pizza, <strong>BhaiTuKha</strong> connects you with the <strong>best restaurants in India</strong>. 
                     </p>
                     <p>
-                        Discover <strong>top restaurants near you</strong> and enjoy delicious meals with <strong>home delivery</strong>, including <strong>pizza delivery</strong>, <strong>burger delivery</strong>, <strong>North Indian food delivery</strong>, <strong>Chinese food delivery</strong>, and <strong>veg food delivery</strong>. Whether you want <strong>late night food delivery</strong>, <strong>cheap food delivery</strong>, or <strong>quick food delivery under 30 minutes</strong>, BhaiTuKha makes it simple to <strong>order food online in India</strong>.
+                        If you are searching for <strong>"BhaiTuKha"</strong> or <strong>"food delivery near me"</strong>, you've come to the right place. We specialize in <strong>fast food delivery</strong>, <strong>affordable meal options</strong>, and <strong>quick delivery under 30 minutes</strong>. Our service is designed for speed and quality, ensuring your food arrives hot and fresh.
                     </p>
                     <p>
-                        Explore the <strong>best restaurants in Delhi, Noida</strong>, and other cities with <strong>online food delivery services</strong> designed for convenience, speed, and quality. Find <strong>budget-friendly meals</strong>, <strong>top-rated dishes</strong>, and <strong>fast delivery food services</strong> all in one place with BhaiTuKha, your trusted <strong>online food delivery website in India</strong>.
+                        From <strong>pizza delivery</strong> and <strong>burger delivery</strong> to <strong>North Indian food delivery</strong> and <strong>Chinese food delivery</strong>, BhaiTuKha has it all. We serve major cities including <strong>Delhi and Noida</strong>, bringing the finest culinary experiences to your doorstep.
                     </p>
                     
-                    <h3 className="text-2xl font-bold text-gray-800 mt-8">Explore a World of Cuisines</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mt-8">Why Everyone Says 'Bhai Tu Kha'</h3>
                     <p>
-                        At BhaiTuKha, we understand that food is more than just sustenance; it's an experience. That's why we offer a diverse range of cuisines to choose from. Craving something spicy? Explore our Indian section featuring Butter Chicken, Paneer Tikka, and Dal Makhani. Looking for a quick bite? Our Burger and Sandwich categories are packed with delicious options from the top fast-food joints.
+                        At BhaiTuKha, we believe that food brings people together. Our platform is built on the philosophy of sharing and enjoyment. We offer a massive variety of <strong>veg food delivery</strong> and non-veg options from top-rated restaurants. 
                     </p>
                     <p>
-                        We also cater to specific dietary needs. Our <strong>Vegan and Healthy</strong> categories are curated for those who prioritize wellness without sacrificing taste. Enjoy fresh salads, protein-packed bowls, and plant-based wraps delivered fresh.
+                        With <strong>late night food delivery</strong> and <strong>cheap food delivery</strong> deals, we ensure that you never go hungry. Find <strong>budget-friendly meals</strong> and <strong>top-rated dishes</strong> all in one place with BhaiTuKha, your trusted <strong>online food delivery website in India</strong>.
                     </p>
                 </div>
             </div>
@@ -2142,24 +2142,24 @@ const OrderFoodOnlinePage = ({ setCurrentPage }) => {
                 <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Order Food Online with BhaiTuKha</h1>
                 <div className="bg-white p-8 rounded-xl shadow-lg prose prose-red max-w-none text-gray-600 leading-relaxed">
                     <p>
-                        <strong>BhaiTuKha</strong> is an online food delivery platform where users can <strong>order food online</strong> easily from the <strong>best restaurants in India</strong>. If you are looking for <strong>food delivery near me</strong>, <strong>fast food delivery</strong>, or <strong>affordable food delivery options</strong>, BhaiTuKha provides a seamless experience with quick and reliable service.
+                        <strong>BhaiTuKha</strong> is the ultimate online food delivery platform where users can <strong>order food online</strong> with ease. If you are searching for the best <strong>food delivery near me</strong>, <strong>fast food delivery</strong>, or <strong>affordable food delivery options</strong>, BhaiTuKha is your best choice.
                     </p>
                     <p>
-                        Discover <strong>top restaurants near you</strong> and enjoy delicious meals with <strong>home delivery</strong>, including <strong>pizza delivery</strong>, <strong>burger delivery</strong>, <strong>North Indian food delivery</strong>, <strong>Chinese food delivery</strong>, and <strong>veg food delivery</strong>.
+                        With <strong>BhaiTuKha</strong>, you can discover <strong>top restaurants near you</strong> and enjoy delicious meals with <strong>home delivery</strong>. We offer everything from <strong>pizza delivery</strong> and <strong>burger delivery</strong> to <strong>North Indian food delivery</strong>, <strong>Chinese food delivery</strong>, and <strong>veg food delivery</strong>.
                     </p>
                     
-                    <h2 className="text-2xl font-bold text-gray-800 mt-6">Speed and Quality Guaranteed</h2>
-                    <p>Whether you want <strong>late night food delivery</strong>, <strong>cheap food delivery</strong>, or <strong>quick food delivery under 30 minutes</strong>, BhaiTuKha makes it simple to <strong>order food online in India</strong>. Explore the <strong>best restaurants in Delhi, Noida</strong>, and other cities with <strong>online food delivery services</strong> designed for convenience, speed, and quality.</p>
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">Speed and Quality with BhaiTuKha</h2>
+                    <p>Whether you want <strong>late night food delivery</strong>, <strong>cheap food delivery</strong>, or <strong>quick food delivery under 30 minutes</strong>, BhaiTuKha makes it simple to <strong>order food online in India</strong>. Explore the <strong>best restaurants in Delhi, Noida</strong>, and other cities with our premium <strong>online food delivery services</strong>.</p>
                     
-                    <h2 className="text-2xl font-bold text-gray-800 mt-6">How to Use BhaiTuKha</h2>
+                    <h2 className="text-2xl font-bold text-gray-800 mt-6">Why Choose BhaiTuKha?</h2>
                     <ol className="list-decimal pl-5 space-y-2">
-                        <li><strong>Set Your Location:</strong> Use our GPS feature to find restaurants delivering near you.</li>
+                        <li><strong>Find Local Favorites:</strong> Search for <strong>BhaiTuKha</strong> to find restaurants delivering near you.</li>
                         <li><strong>Browse & Choose:</strong> Explore budget-friendly meals and top-rated dishes.</li>
-                        <li><strong>Add to Cart:</strong> Customize your order and check out securely.</li>
+                        <li><strong>Add to Cart:</strong> Customize your order and check out securely on the <strong>BhaiTuKha</strong> website.</li>
                         <li><strong>Relax & Eat:</strong> Benefit from our fast delivery food services.</li>
                     </ol>
 
-                    <p>Find <strong>budget-friendly meals</strong>, <strong>top-rated dishes</strong>, and <strong>fast delivery food services</strong> all in one place with BhaiTuKha, your <strong>trusted online food delivery website in India</strong>.</p>
+                    <p>Find <strong>budget-friendly meals</strong>, <strong>top-rated dishes</strong>, and <strong>fast delivery food services</strong> all in one place with BhaiTuKha, your <strong>#1 trusted online food delivery website in India</strong>.</p>
                 </div>
                 <div className="mt-8 text-center">
                     <button onClick={() => setCurrentPage('home')} className="px-6 py-3 bg-[#E94458] text-white font-bold rounded-lg hover:bg-red-700 transition shadow-lg">Start Your Order Now</button>

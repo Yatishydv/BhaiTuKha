@@ -2261,16 +2261,41 @@ const App = () => {
   useEffect(() => {
     updateSchema({
       "@context": "https://schema.org",
-      "@type": "FoodDeliveryService",
-      "name": "BhaiTuKha India",
-      "url": window.location.origin,
-      "logo": "https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/foodzy-logo.png",
-      "description": "BhaiTuKha is an online food delivery platform where users can order food online easily from the best restaurants in India. Fast delivery for pizza, burgers, and North Indian food.",
-      "areaServed": "India",
-      "provider": {
-        "@type": "Organization",
-        "name": "BhaiTuKha"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "BhaiTuKha",
+          "url": window.location.origin,
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": `${window.location.origin}/?q={search_term_string}`,
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "FoodDeliveryService",
+          "name": "BhaiTuKha India",
+          "url": window.location.origin,
+          "logo": "https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/foodzy-logo.png",
+          "description": "BhaiTuKha is an online food delivery platform. Order food online easily from the best restaurants in India. Fast delivery for pizza, burgers, and North Indian food.",
+          "areaServed": "India",
+          "provider": {
+            "@type": "Organization",
+            "name": "BhaiTuKha"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": window.location.origin
+            }
+          ]
+        }
+      ]
     });
   }, []);
 

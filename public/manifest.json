@@ -1,0 +1,15 @@
+{
+  "short_name": "BhaiTuKha",
+  "name": "BhaiTuKha | Order Food Online",
+  "icons": [
+    {
+      "src": "src/assets/foodzy.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#E94458",
+  "background_color": "#ffffff"
+}

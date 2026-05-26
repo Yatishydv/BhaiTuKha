@@ -72,7 +72,7 @@ console.log("✅ App.jsx: Firebase imported from firebase.js:", { app, auth, db,
 // preserve any other constants your app uses
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-foodzy-id';
 const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-const apiKey = "AIzaSyCqJmtwytjxw8tkCBdgChzfMy29CmukH74"; 
+const apiKey = ""; 
 
 // --- MOCK DISH DATA (OVER 70 ITEMS) WITH FULL GITHUB URLS ---
 const BASE_URL = 'https://raw.githubusercontent.com/Yatishydv/BhaiTuKha/main/assets/';
